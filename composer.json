@@ -1,0 +1,23 @@
+{
+    "name": "maximaster/file-mailer-transport",
+    "description": "Saves served emails as files",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Лавриненко Максим",
+            "email": "maxim.lavrinenko@maximaster.ru"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "psr/log": "^1.0",
+        "symfony/mailer": "^4.3",
+        "symfony/event-dispatcher": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Maximaster\\FileMailerTransport\\": "src/"
+        }
+    }
+}
