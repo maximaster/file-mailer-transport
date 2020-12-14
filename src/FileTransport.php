@@ -55,15 +55,13 @@ class FileTransport extends AbstractTransport implements TransportInterface
 
     protected function buildPath(string $template, SentMessage $message): string
     {
-        $path = $template;
-
         $path = str_replace(
             '@hash',
             hash($this->options['hash_algo'], $message->getMessage()->toString()),
-            $path
+            $template
         );
 
-        $path = strftime($path);
+        $path = !empty($this->options['path_renderer']) && is_callable($this->options['path_renderer']) ? call_user_func_array($this->options['path_renderer'], [$path]) : strftime($path);
         return $path;
     }
 
