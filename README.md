@@ -6,6 +6,10 @@ You've just found the right package!
 
 ## Usage
 
+```bash
+composer require maximaster/file-mailer-transport
+```
+
 **services.yaml**
 
 ```yaml
